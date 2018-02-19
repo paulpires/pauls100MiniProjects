@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		4CE3EE07203B5B070095DADD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE06203B5B070095DADD /* AppDelegate.swift */; };
-		4CE3EE09203B5B070095DADD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE08203B5B070095DADD /* ViewController.swift */; };
+		4CE3EE09203B5B070095DADD /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE08203B5B070095DADD /* ProjectListViewController.swift */; };
 		4CE3EE0C203B5B070095DADD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE3EE0A203B5B070095DADD /* Main.storyboard */; };
 		4CE3EE0F203B5B070095DADD /* pauls100MiniProjects.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE0D203B5B070095DADD /* pauls100MiniProjects.xcdatamodeld */; };
 		4CE3EE11203B5B070095DADD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE3EE10203B5B070095DADD /* Assets.xcassets */; };
 		4CE3EE14203B5B070095DADD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE3EE12203B5B070095DADD /* LaunchScreen.storyboard */; };
 		4CE3EE1F203B5B070095DADD /* pauls100MiniProjectsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE1E203B5B070095DADD /* pauls100MiniProjectsTests.swift */; };
 		4CE3EE2A203B5B070095DADD /* pauls100MiniProjectsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE29203B5B070095DADD /* pauls100MiniProjectsUITests.swift */; };
+		4CE3EE39203B5BBA0095DADD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE38203B5BBA0095DADD /* Router.swift */; };
+		4CE3EE40203B5D930095DADD /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE3F203B5D930095DADD /* DataProvider.swift */; };
+		4CE3EE43203B5E9C0095DADD /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE42203B5E9C0095DADD /* Project.swift */; };
+		4CE3EE46203B66360095DADD /* ProjectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE45203B66360095DADD /* ProjectListViewModel.swift */; };
+		4CE3EE48203B69680095DADD /* ProjectListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE3EE47203B69680095DADD /* ProjectListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +42,7 @@
 /* Begin PBXFileReference section */
 		4CE3EE03203B5B070095DADD /* pauls100MiniProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pauls100MiniProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE3EE06203B5B070095DADD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4CE3EE08203B5B070095DADD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CE3EE08203B5B070095DADD /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
 		4CE3EE0B203B5B070095DADD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CE3EE0E203B5B070095DADD /* pauls100MiniProjects.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pauls100MiniProjects.xcdatamodel; sourceTree = "<group>"; };
 		4CE3EE10203B5B070095DADD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		4CE3EE25203B5B070095DADD /* pauls100MiniProjectsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pauls100MiniProjectsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE3EE29203B5B070095DADD /* pauls100MiniProjectsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pauls100MiniProjectsUITests.swift; sourceTree = "<group>"; };
 		4CE3EE2B203B5B070095DADD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CE3EE38203B5BBA0095DADD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		4CE3EE3F203B5D930095DADD /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		4CE3EE42203B5E9C0095DADD /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		4CE3EE45203B66360095DADD /* ProjectListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewModel.swift; sourceTree = "<group>"; };
+		4CE3EE47203B69680095DADD /* ProjectListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +110,10 @@
 			isa = PBXGroup;
 			children = (
 				4CE3EE06203B5B070095DADD /* AppDelegate.swift */,
-				4CE3EE08203B5B070095DADD /* ViewController.swift */,
+				4CE3EE37203B5BAD0095DADD /* Navigation */,
+				4CE3EE3B203B5D720095DADD /* Protocols */,
+				4CE3EE3A203B5D660095DADD /* ViewControllers */,
+				4CE3EE41203B5E900095DADD /* Models */,
 				4CE3EE0A203B5B070095DADD /* Main.storyboard */,
 				4CE3EE10203B5B070095DADD /* Assets.xcassets */,
 				4CE3EE12203B5B070095DADD /* LaunchScreen.storyboard */,
@@ -126,6 +139,48 @@
 				4CE3EE2B203B5B070095DADD /* Info.plist */,
 			);
 			path = pauls100MiniProjectsUITests;
+			sourceTree = "<group>";
+		};
+		4CE3EE37203B5BAD0095DADD /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				4CE3EE38203B5BBA0095DADD /* Router.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		4CE3EE3A203B5D660095DADD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4CE3EE44203B66250095DADD /* ProjectList */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4CE3EE3B203B5D720095DADD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4CE3EE3F203B5D930095DADD /* DataProvider.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4CE3EE41203B5E900095DADD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4CE3EE42203B5E9C0095DADD /* Project.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4CE3EE44203B66250095DADD /* ProjectList */ = {
+			isa = PBXGroup;
+			children = (
+				4CE3EE08203B5B070095DADD /* ProjectListViewController.swift */,
+				4CE3EE47203B69680095DADD /* ProjectListViewController.xib */,
+				4CE3EE45203B66360095DADD /* ProjectListViewModel.swift */,
+			);
+			path = ProjectList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE3EE48203B69680095DADD /* ProjectListViewController.xib in Resources */,
 				4CE3EE14203B5B070095DADD /* LaunchScreen.storyboard in Resources */,
 				4CE3EE11203B5B070095DADD /* Assets.xcassets in Resources */,
 				4CE3EE0C203B5B070095DADD /* Main.storyboard in Resources */,
@@ -262,7 +318,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CE3EE09203B5B070095DADD /* ViewController.swift in Sources */,
+				4CE3EE39203B5BBA0095DADD /* Router.swift in Sources */,
+				4CE3EE43203B5E9C0095DADD /* Project.swift in Sources */,
+				4CE3EE46203B66360095DADD /* ProjectListViewModel.swift in Sources */,
+				4CE3EE09203B5B070095DADD /* ProjectListViewController.swift in Sources */,
+				4CE3EE40203B5D930095DADD /* DataProvider.swift in Sources */,
 				4CE3EE0F203B5B070095DADD /* pauls100MiniProjects.xcdatamodeld in Sources */,
 				4CE3EE07203B5B070095DADD /* AppDelegate.swift in Sources */,
 			);
