@@ -11,14 +11,15 @@ import UIKit
 class ProjectListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    let dataProvider: DataProvider
-    var projectsViewModel: ProjectListViewModel? {
+    var projectsViewModel = [ProjectViewModel]() {
         didSet {
-            reloadData()
+            reloadCollectionView()
         }
     }
     
+    private var collectionViewDataSource: ProjectCollectionViewDataSource?
+    private let dataProvider: DataProvider
+
     init(dataProvider: DataProvider) {
         self.dataProvider = dataProvider
         super.init(nibName: nil, bundle: nil)
@@ -30,13 +31,23 @@ class ProjectListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        registerCell()
         title = "100 Days of iOS"
         projectsViewModel = dataProvider.projects()
     }
     
-    private func reloadData() {
-        // todo: hookup dataprovider, datasource, delegate + cells
+    private func reloadCollectionView() {
+        collectionViewDataSource = ProjectCollectionViewDataSource(projectViewModels: projectsViewModel)
+        collectionView.dataSource = collectionViewDataSource
+        collectionView.reloadData()
     }
+    
+    private func registerCell() {
+        let nib = UINib(nibName: "ProjectCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "project_cell")
+    }
+    
+    // todo: collection view delegate call backs
 }
+
 

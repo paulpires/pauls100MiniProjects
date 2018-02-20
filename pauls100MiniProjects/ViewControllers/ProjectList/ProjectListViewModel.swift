@@ -6,9 +6,21 @@
 //  Copyright © 2018 Paul Pires. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct ProjectListViewModel {
+struct ProjectViewModel {
     
-    var projects: [Project]
+    private var projectModel: Project
+    
+    init(projectModel: Project) {
+        self.projectModel = projectModel
+    }
+    
+    func project() -> String {
+        return projectModel.name
+    }
+    
+    func projectIcon() -> UIImage? {
+        return UIImage(named: projectModel.imageName)
+    }
 }

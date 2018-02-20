@@ -8,14 +8,9 @@
 
 import UIKit
 
+// could be codable if we were getting it from a JSON api
 struct Project {
     
     let name: String
     let imageName: String
-    lazy var icon: UIImage? = UIImage(named: self.imageName)
-    
-    init(name: String, imageName: String) {
-        self.name = name
-        self.imageName = imageName
-    }
 }
