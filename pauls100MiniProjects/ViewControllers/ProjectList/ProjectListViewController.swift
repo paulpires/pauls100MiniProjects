@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ProjectListViewController: UICollectionViewController {
+class ProjectListViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     let dataProvider: DataProvider
     var projectsViewModel: ProjectListViewModel? {
         didSet {
@@ -20,7 +22,6 @@ class ProjectListViewController: UICollectionViewController {
     init(dataProvider: DataProvider) {
         self.dataProvider = dataProvider
         super.init(nibName: nil, bundle: nil)
-        self.collectionView?.collectionViewLayout = UICollectionViewLayout()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,23 +30,13 @@ class ProjectListViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumLineSpacing = 5
-        flowLayout.minimumInteritemSpacing = 5
-        flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5)
-        
-        self.collectionView?.collectionViewLayout = flowLayout
-        
+
         title = "100 Days of iOS"
         projectsViewModel = dataProvider.projects()
     }
     
     private func reloadData() {
-        collectionView?.reloadData()
+        // todo: hookup dataprovider, datasource, delegate + cells
     }
-    
-    
 }
 
