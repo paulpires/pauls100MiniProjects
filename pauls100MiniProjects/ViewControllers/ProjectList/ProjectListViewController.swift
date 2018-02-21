@@ -39,6 +39,7 @@ class ProjectListViewController: UIViewController {
     private func reloadCollectionView() {
         collectionViewDataSource = ProjectCollectionViewDataSource(projectViewModels: projectsViewModel)
         collectionView.dataSource = collectionViewDataSource
+        collectionView.delegate = self
         collectionView.reloadData()
     }
     
@@ -48,6 +49,19 @@ class ProjectListViewController: UIViewController {
     }
     
     // todo: collection view delegate call backs
+}
+
+extension ProjectListViewController: UICollectionViewDelegate {
+
+}
+
+extension ProjectListViewController: UICollectionViewDelegateFlowLayout {
+
+    // TODO: set size of cells
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let numberOfColumns = collectionView.traitCollection.horizontalSizeClass
+//    }
 }
 
 
