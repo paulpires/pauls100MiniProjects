@@ -25,6 +25,10 @@ class ProjectCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "project_cell", for: indexPath) as? ProjectCollectionViewCell
         cell?.viewModel = projectViewModels[indexPath.row]
+        cell?.layer.borderWidth = 1.0
+        
+        
+        cell?.layer.borderColor = UIColor.gray.cgColor
         return cell ?? UICollectionViewCell()
     }
  

@@ -47,8 +47,6 @@ class ProjectListViewController: UIViewController {
         let nib = UINib(nibName: "ProjectCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "project_cell")
     }
-    
-    // todo: collection view delegate call backs
 }
 
 extension ProjectListViewController: UICollectionViewDelegate {
@@ -57,11 +55,13 @@ extension ProjectListViewController: UICollectionViewDelegate {
 
 extension ProjectListViewController: UICollectionViewDelegateFlowLayout {
 
-    // TODO: set size of cells
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        let numberOfColumns = collectionView.traitCollection.horizontalSizeClass
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let numberOfColumns = collectionView.traitCollection.horizontalSizeClass == .compact ? CGFloat(3.0) : CGFloat(5.0)
+        let width = floor(collectionView.bounds.width / numberOfColumns)
+        let height = width
+        return CGSize(width: width, height: height)
+    }
 }
 
 
