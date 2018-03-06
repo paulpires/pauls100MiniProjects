@@ -24,7 +24,7 @@ class ProjectCollectionViewCell: UICollectionViewCell {
     }
     
     private func updateCell() {
-//        icon.image = viewModel?.projectIcon()
+        icon.image = viewModel?.projectIcon()
         projectName.text = viewModel?.project()
     }
 }

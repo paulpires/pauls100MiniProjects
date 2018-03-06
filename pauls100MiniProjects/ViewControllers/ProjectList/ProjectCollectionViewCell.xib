@@ -20,24 +20,33 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="project name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqd-uK-AEq">
-                        <rect key="frame" x="49.5" y="89.5" width="101" height="21"/>
+                        <rect key="frame" x="50" y="164" width="101" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="wip" translatesAutoresizingMaskIntoConstraints="NO" id="IG2-40-DK3">
+                        <rect key="frame" x="50" y="50" width="100" height="100"/>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="Wqd-uK-AEq" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="H81-aB-YFs"/>
-                <constraint firstItem="Wqd-uK-AEq" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="WRJ-I4-v6t"/>
+                <constraint firstAttribute="bottom" secondItem="Wqd-uK-AEq" secondAttribute="bottom" constant="15" id="6YK-P7-5BL"/>
+                <constraint firstItem="IG2-40-DK3" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="97Z-ui-xcw"/>
+                <constraint firstItem="Wqd-uK-AEq" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="VZ2-PA-bl6"/>
+                <constraint firstItem="IG2-40-DK3" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ydG-3e-Kng"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="203" height="198"/>
             <connections>
+                <outlet property="icon" destination="IG2-40-DK3" id="sND-rq-PAO"/>
                 <outlet property="projectName" destination="Wqd-uK-AEq" id="oDh-PW-97l"/>
             </connections>
             <point key="canvasLocation" x="35.5" y="53"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="wip" width="100" height="100"/>
+    </resources>
 </document>
