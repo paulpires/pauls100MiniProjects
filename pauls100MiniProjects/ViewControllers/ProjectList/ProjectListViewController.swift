@@ -32,8 +32,16 @@ class ProjectListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
-        title = "100 Days of iOS"
+        title = "100 Mini iOS Projects"
         projectsViewModel = dataProvider.projects()
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        super.willTransition(to: newCollection, with: coordinator)
+        coordinator.animate(alongsideTransition: { (context) in
+            self.collectionView.collectionViewLayout.invalidateLayout()
+        }, completion: nil)
     }
     
     private func reloadCollectionView() {
@@ -50,7 +58,7 @@ class ProjectListViewController: UIViewController {
 }
 
 extension ProjectListViewController: UICollectionViewDelegate {
-
+    
 }
 
 extension ProjectListViewController: UICollectionViewDelegateFlowLayout {
@@ -58,7 +66,8 @@ extension ProjectListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let numberOfColumns = collectionView.traitCollection.horizontalSizeClass == .compact ? CGFloat(3.0) : CGFloat(5.0)
-        let width = floor(collectionView.bounds.width / numberOfColumns)
+        
+        let width = collectionView.bounds.width / numberOfColumns
         let height = width
         return CGSize(width: width, height: height)
     }
