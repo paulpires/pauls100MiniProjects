@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,25 +21,34 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="project name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqd-uK-AEq">
-                        <rect key="frame" x="50" y="164" width="101" height="21"/>
+                        <rect key="frame" x="50" y="152" width="101" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="wip" translatesAutoresizingMaskIntoConstraints="NO" id="IG2-40-DK3">
+                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="wip" translatesAutoresizingMaskIntoConstraints="NO" id="IG2-40-DK3">
                         <rect key="frame" x="50" y="50" width="100" height="100"/>
+                        <viewLayoutGuide key="safeArea" id="5WZ-lB-EZB"/>
                     </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Wqd-uK-AEq" secondAttribute="bottom" constant="15" id="6YK-P7-5BL"/>
                 <constraint firstItem="IG2-40-DK3" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="97Z-ui-xcw"/>
+                <constraint firstItem="IG2-40-DK3" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="1:2" id="B2x-go-gBV"/>
                 <constraint firstItem="Wqd-uK-AEq" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="VZ2-PA-bl6"/>
+                <constraint firstItem="IG2-40-DK3" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="1:2" id="grq-p1-jbt"/>
+                <constraint firstItem="Wqd-uK-AEq" firstAttribute="top" secondItem="IG2-40-DK3" secondAttribute="bottom" constant="2" id="qsX-KP-m7I"/>
                 <constraint firstItem="IG2-40-DK3" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ydG-3e-Kng"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="203" height="198"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Wqd-uK-AEq"/>
+                    <exclude reference="IG2-40-DK3"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="icon" destination="IG2-40-DK3" id="sND-rq-PAO"/>
                 <outlet property="projectName" destination="Wqd-uK-AEq" id="oDh-PW-97l"/>
