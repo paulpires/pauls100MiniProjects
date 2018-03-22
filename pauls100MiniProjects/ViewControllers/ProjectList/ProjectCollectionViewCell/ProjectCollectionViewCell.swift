@@ -26,5 +26,7 @@ class ProjectCollectionViewCell: UICollectionViewCell {
     private func updateCell() {
         icon.image = viewModel?.projectIcon()
         projectName.text = viewModel?.project()
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.gray.cgColor
     }
 }

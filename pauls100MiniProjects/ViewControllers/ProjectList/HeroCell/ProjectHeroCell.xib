@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="project_hero_cell" id="gTV-IL-0wX" customClass="ProjectHeroCell" customModule="pauls100MiniProjects" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="245" height="229"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="245" height="229"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mac_app_store" translatesAutoresizingMaskIntoConstraints="NO" id="4UR-Xd-mat">
+                        <rect key="frame" x="0.0" y="0.0" width="245" height="229"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4UR-Xd-mat" secondAttribute="trailing" id="6DI-9i-BQo"/>
+                <constraint firstItem="4UR-Xd-mat" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Bwu-11-pWd"/>
+                <constraint firstItem="4UR-Xd-mat" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mhs-qx-6Vf"/>
+                <constraint firstAttribute="bottom" secondItem="4UR-Xd-mat" secondAttribute="bottom" id="rIm-r1-DVV"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="245" height="229"/>
+            <connections>
+                <outlet property="heroImage" destination="4UR-Xd-mat" id="J7a-aa-Oog"/>
+            </connections>
+            <point key="canvasLocation" x="-56.5" y="98.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="mac_app_store" width="100" height="100"/>
+    </resources>
+</document>

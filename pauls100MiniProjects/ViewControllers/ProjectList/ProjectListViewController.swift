@@ -41,11 +41,6 @@ class ProjectListViewController: UIViewController {
         self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.willTransition(to: newCollection, with: coordinator)
-//        self.collectionView.collectionViewLayout.invalidateLayout()
-    }
-    
     private func reloadCollectionView() {
         collectionViewDataSource = ProjectCollectionViewDataSource(projectViewModels: projectsViewModel)
         collectionView.dataSource = collectionViewDataSource
@@ -54,53 +49,46 @@ class ProjectListViewController: UIViewController {
     }
     
     private func registerCell() {
-        let nib = UINib(nibName: "ProjectCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "project_cell")
+        let projectCell = UINib(nibName: "ProjectCollectionViewCell", bundle: nil)
+        let projectHeroCell = UINib(nibName: "ProjectHeroCell", bundle: nil)
+        collectionView.register(projectCell, forCellWithReuseIdentifier: "project_cell")
+        collectionView.register(projectHeroCell, forCellWithReuseIdentifier: "project_hero_cell")
     }
 }
 
 extension ProjectListViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("hodor doing nothing for now...")
+    }
 }
 
 extension ProjectListViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        if indexPath.row == 0 {
+        let horizontalTraitCompact = collectionView.traitCollection.horizontalSizeClass == .compact
+        let verticalTraitCompact = collectionView.traitCollection.verticalSizeClass == .compact
+        
+        if indexPath.section == 0 {
             let width = collectionView.frame.width
-            let height = width * 0.5
+            let height = (!horizontalTraitCompact && !verticalTraitCompact) ? CGFloat(400) : CGFloat(200)
             return CGSize(width: width, height: height)
         }
         
-        let numberOfColumns = collectionView.traitCollection.horizontalSizeClass == .compact ? CGFloat(3.0) : CGFloat(5.0)
+        let minCellWidth: CGFloat = 200.0
+        let numberOfColumns = horizontalTraitCompact ? CGFloat(3.0) : CGFloat(5.0)
         var width = collectionView.bounds.width / numberOfColumns
         var height = width
-        
-        let wholeNumber = width.truncatingRemainder(dividingBy: 1) == 0
-        if !wholeNumber {
-            // can't device width of screen into 3 whole numbers. flooring the width of the cell will ensure 3 cells get displayed on screen.
-            width = floor(collectionView.bounds.width / numberOfColumns)
+
+        let fitsFlushOnScreen = width.truncatingRemainder(dividingBy: 1) == 0
+        if !fitsFlushOnScreen {
+            width = collectionView.bounds.width / (numberOfColumns + 1)
+            if width < minCellWidth && horizontalTraitCompact {
+                width = collectionView.bounds.width / (numberOfColumns - 1)
+            }
             height = width
         }
         return CGSize(width: width, height: height)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
-        let numberOfColumns = collectionView.traitCollection.horizontalSizeClass == .compact ? CGFloat(3.0) : CGFloat(5.0)
-        let remainder = (collectionView.bounds.width / numberOfColumns).truncatingRemainder(dividingBy: 1)
-        return ceil(remainder)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        let numberOfColumns = collectionView.traitCollection.horizontalSizeClass == .compact ? CGFloat(3.0) : CGFloat(5.0)
-        let remainder = (collectionView.bounds.width / numberOfColumns).truncatingRemainder(dividingBy: 1)
-        return ceil(remainder)
-    }
-    
-    
 }
-
-

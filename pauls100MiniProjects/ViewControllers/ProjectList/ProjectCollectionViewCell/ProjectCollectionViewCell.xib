@@ -43,12 +43,6 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="203" height="198"/>
-            <variation key="default">
-                <mask key="subviews">
-                    <exclude reference="Wqd-uK-AEq"/>
-                    <exclude reference="IG2-40-DK3"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="icon" destination="IG2-40-DK3" id="sND-rq-PAO"/>
                 <outlet property="projectName" destination="Wqd-uK-AEq" id="oDh-PW-97l"/>

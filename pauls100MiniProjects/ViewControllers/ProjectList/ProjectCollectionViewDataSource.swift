@@ -16,17 +16,25 @@ class ProjectCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         self.projectViewModels = projectViewModels
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return projectViewModels.count
+        return section == 0 ? 1 : projectViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "project_hero_cell", for: indexPath) as? ProjectHeroCell
+            cell?.viewModel = ProjectHeroCellViewModel()
+            return cell ?? UICollectionViewCell()
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "project_cell", for: indexPath) as? ProjectCollectionViewCell
         cell?.viewModel = projectViewModels[indexPath.row]
-//        cell?.layer.borderWidth = 0.5
-//        cell?.layer.borderColor = UIColor.gray.cgColor
         return cell ?? UICollectionViewCell()
     }
  
