@@ -12,7 +12,6 @@ class Router {
     
     let window: UIWindow
     let dataProvider: DataProvider
-    var rootNavigationViewController: UINavigationController?
     
     init(window: UIWindow, dataProvider: DataProvider) {
         self.window = window
@@ -22,8 +21,7 @@ class Router {
     func showInitialView() {
         
         let projectsListViewController = ProjectListViewController(dataProvider: dataProvider)
-        rootNavigationViewController = UINavigationController(rootViewController: projectsListViewController)
-        window.rootViewController = rootNavigationViewController
+        window.rootViewController = projectsListViewController.navigationViewController
         window.makeKeyAndVisible()
     }
     

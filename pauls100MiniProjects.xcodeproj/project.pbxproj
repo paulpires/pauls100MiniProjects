@@ -13,6 +13,8 @@
 		4CA69125205F285500044A72 /* ProjectHeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA69123205F285500044A72 /* ProjectHeroCell.swift */; };
 		4CA69126205F285500044A72 /* ProjectHeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA69124205F285500044A72 /* ProjectHeroCell.xib */; };
 		4CA7265220643972007AB75E /* ProjectHeroCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7265120643972007AB75E /* ProjectHeroCellViewModel.swift */; };
+		4CA7265B20657FAC007AB75E /* StretchyHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7265920657FAC007AB75E /* StretchyHeaderViewController.swift */; };
+		4CA7265C20657FAC007AB75E /* StretchyHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA7265A20657FAC007AB75E /* StretchyHeaderViewController.xib */; };
 		4CE3EE07203B5B070095DADD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE06203B5B070095DADD /* AppDelegate.swift */; };
 		4CE3EE09203B5B070095DADD /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE08203B5B070095DADD /* ProjectListViewController.swift */; };
 		4CE3EE0C203B5B070095DADD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE3EE0A203B5B070095DADD /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		4CA69123205F285500044A72 /* ProjectHeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeroCell.swift; sourceTree = "<group>"; };
 		4CA69124205F285500044A72 /* ProjectHeroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectHeroCell.xib; sourceTree = "<group>"; };
 		4CA7265120643972007AB75E /* ProjectHeroCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeroCellViewModel.swift; sourceTree = "<group>"; };
+		4CA7265920657FAC007AB75E /* StretchyHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderViewController.swift; sourceTree = "<group>"; };
+		4CA7265A20657FAC007AB75E /* StretchyHeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StretchyHeaderViewController.xib; sourceTree = "<group>"; };
 		4CE3EE03203B5B070095DADD /* pauls100MiniProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pauls100MiniProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE3EE06203B5B070095DADD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CE3EE08203B5B070095DADD /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 				4CE3EE45203B66360095DADD /* ProjectViewModel.swift */,
 			);
 			path = ProjectCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		4CA7265820657F88007AB75E /* StretchyHeader */ = {
+			isa = PBXGroup;
+			children = (
+				4CA7265920657FAC007AB75E /* StretchyHeaderViewController.swift */,
+				4CA7265A20657FAC007AB75E /* StretchyHeaderViewController.xib */,
+			);
+			path = StretchyHeader;
 			sourceTree = "<group>";
 		};
 		4CE3EDFA203B5B070095DADD = {
@@ -184,6 +197,7 @@
 		4CE3EE3A203B5D660095DADD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4CA7265820657F88007AB75E /* StretchyHeader */,
 				4CE3EE44203B66250095DADD /* ProjectList */,
 			);
 			path = ViewControllers;
@@ -327,6 +341,7 @@
 				4C5B96E5203CCF7900841872 /* ProjectCollectionViewCell.xib in Resources */,
 				4CE3EE48203B69680095DADD /* ProjectListViewController.xib in Resources */,
 				4CE3EE14203B5B070095DADD /* LaunchScreen.storyboard in Resources */,
+				4CA7265C20657FAC007AB75E /* StretchyHeaderViewController.xib in Resources */,
 				4CA69126205F285500044A72 /* ProjectHeroCell.xib in Resources */,
 				4CE3EE11203B5B070095DADD /* Assets.xcassets in Resources */,
 				4CE3EE0C203B5B070095DADD /* Main.storyboard in Resources */,
@@ -357,6 +372,7 @@
 				4C5B96E4203CCF7900841872 /* ProjectCollectionViewCell.swift in Sources */,
 				4CE3EE39203B5BBA0095DADD /* Router.swift in Sources */,
 				4CE3EE43203B5E9C0095DADD /* Project.swift in Sources */,
+				4CA7265B20657FAC007AB75E /* StretchyHeaderViewController.swift in Sources */,
 				4C5B96E9203CD98C00841872 /* ProjectCollectionViewDataSource.swift in Sources */,
 				4CE3EE46203B66360095DADD /* ProjectViewModel.swift in Sources */,
 				4CA69125205F285500044A72 /* ProjectHeroCell.swift in Sources */,

@@ -23,4 +23,8 @@ struct ProjectViewModel {
     func projectIcon() -> UIImage? {
         return UIImage(named: projectModel.imageName)
     }
+    
+    func viewController() -> ViewController {
+        return projectModel.viewController
+    }
 }

@@ -11,6 +11,7 @@ import UIKit
 class ProjectListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var navigationViewController: UINavigationController?
     var projectsViewModel = [ProjectViewModel]() {
         didSet {
             reloadCollectionView()
@@ -23,6 +24,7 @@ class ProjectListViewController: UIViewController {
     init(dataProvider: DataProvider) {
         self.dataProvider = dataProvider
         super.init(nibName: nil, bundle: nil)
+        navigationViewController = UINavigationController(rootViewController: self)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -59,7 +61,18 @@ class ProjectListViewController: UIViewController {
 extension ProjectListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("hodor doing nothing for now...")
+        
+        let projectViewModel = projectsViewModel[indexPath.row]
+        
+        switch projectViewModel.viewController() {
+        
+        case .stretchHeader:
+            let stretchyHeader = StretchyHeaderViewController()
+            navigationViewController?.pushViewController(stretchyHeader, animated: true)
+            
+        case .wip:
+            print("doing nothing for now...")
+        }
     }
 }
 

@@ -8,9 +8,15 @@
 
 import UIKit
 
+enum ViewController {
+    case wip
+    case stretchHeader
+}
+
 // could be codable if we were getting it from a JSON api
 struct Project {
     
     let name: String
     let imageName: String
+    let viewController: ViewController
 }
