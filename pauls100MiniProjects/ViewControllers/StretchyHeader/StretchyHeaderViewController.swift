@@ -17,11 +17,18 @@ class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        edgesForExtendedLayout = []
+//        edgesForExtendedLayout = []
         scrollView.delegate = self
         tableView.delegate = self
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.shadowImage = nil
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -50,10 +57,8 @@ class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITa
             tableView.layer.transform = tableViewTransform
             
         } else {
-//            tableViewTransform = CATransform3DTranslate(tableViewTransform, 0, abs(offset), 0)
             headerTransform = CATransform3DTranslate(headerTransform, 0, -offset, 0)
             headerView.layer.transform = headerTransform
-//            tableView.layer.transform = tableViewTransform
         }
     }
     

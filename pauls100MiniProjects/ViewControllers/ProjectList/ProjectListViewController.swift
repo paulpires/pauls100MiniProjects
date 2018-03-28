@@ -34,8 +34,8 @@ class ProjectListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
-        title = "100 Mini iOS Projects"
         projectsViewModel = dataProvider.projects()
+        title = "Pauls Mini Projects"
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -68,8 +68,8 @@ extension ProjectListViewController: UICollectionViewDelegate {
         
         case .stretchHeader:
             let stretchyHeader = StretchyHeaderViewController()
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
             navigationViewController?.pushViewController(stretchyHeader, animated: true)
-            
         case .wip:
             print("doing nothing for now...")
         }
