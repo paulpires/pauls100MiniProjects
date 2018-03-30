@@ -20,9 +20,11 @@ class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITa
 //        edgesForExtendedLayout = []
         scrollView.delegate = self
         tableView.delegate = self
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.shadowImage = nil
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+        navigationController?.navigationBar.backgroundColor = .clear
     }
     
     override func viewWillAppear(_ animated: Bool) {
