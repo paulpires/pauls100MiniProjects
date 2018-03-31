@@ -14,25 +14,16 @@ class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITa
     @IBOutlet weak var scrollView: UIScrollView!
     let offset_HeaderStop: CGFloat = 40.0
     @IBOutlet weak var tableView: UITableView!
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        edgesForExtendedLayout = []
         scrollView.delegate = self
         tableView.delegate = self
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = .clear
-        navigationController?.navigationBar.backgroundColor = .clear
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
+        navigationController?.makeTransparent()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -49,7 +40,7 @@ class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITa
             
             let scaleFactor: CGFloat = abs(offset) / headerView.bounds.height
             let headerHeightIncrease = headerView.bounds.height * (1.0 + scaleFactor) - headerView.bounds.height
-            let yVariation = headerHeightIncrease / 2.0
+            let yVariation = headerHeightIncrease / 2
             
             headerTransform = CATransform3DTranslate(headerTransform, 0, yVariation, 0)
             headerTransform = CATransform3DScale(headerTransform, 1.0 + scaleFactor, 1.0 + scaleFactor, 0)
@@ -63,7 +54,19 @@ class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITa
             headerView.layer.transform = headerTransform
         }
     }
-    
-    // MARK: tableview delegate
 }
 
+private extension UINavigationController {
+    
+    func makeTransparent() {
+        navigationBar.setBackgroundImage(UIImage(), for:.default)
+        navigationBar.isTranslucent = true
+        navigationBar.shadowImage = UIImage()
+    }
+    
+    func defaultStyling() {
+        navigationBar.setBackgroundImage(UINavigationBar.appearance().backgroundImage(for: .default), for:.default)
+        navigationBar.isTranslucent = UINavigationBar.appearance().isTranslucent
+        navigationBar.shadowImage = UINavigationBar.appearance().shadowImage
+    }
+}
