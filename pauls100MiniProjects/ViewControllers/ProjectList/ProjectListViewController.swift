@@ -62,6 +62,8 @@ extension ProjectListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        // delegate this back to the router?
+        
         let projectViewModel = projectsViewModel[indexPath.row]
         
         switch projectViewModel.viewController() {
@@ -70,6 +72,18 @@ extension ProjectListViewController: UICollectionViewDelegate {
             let stretchyHeader = StretchyHeaderViewController()
             navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
             navigationViewController?.pushViewController(stretchyHeader, animated: true)
+        case .animatedTabBar:
+            let animatedTabBar = AnimatedTabBarViewController()
+            let view1 = BlankViewController(title: "Bookmarks")
+            view1.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
+            let view2 = BlankViewController(title: "Downloads")
+            view2.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
+            let view3 = BlankViewController(title: "Contacts")
+            view3.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
+            let view4 = BlankViewController(title: "More")
+            view4.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+            animatedTabBar.viewControllers = [view1, view2, view3, view4]
+            navigationViewController?.pushViewController(animatedTabBar, animated: true)
         case .wip:
             print("doing nothing for now...")
         }

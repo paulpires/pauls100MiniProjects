@@ -11,6 +11,7 @@ import UIKit
 enum ViewController {
     case wip
     case stretchHeader
+    case animatedTabBar
 }
 
 // could be codable if we were getting it from a JSON api

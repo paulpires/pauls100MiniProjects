@@ -64,18 +64,3 @@ class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITe
 //        }
     }
 }
-
-private extension UINavigationController {
-    
-    func makeTransparent() {
-        navigationBar.setBackgroundImage(UIImage(), for:.default)
-        navigationBar.isTranslucent = true
-        navigationBar.shadowImage = UIImage()
-    }
-    
-    func defaultStyling() {
-        navigationBar.setBackgroundImage(UINavigationBar.appearance().backgroundImage(for: .default), for:.default)
-        navigationBar.isTranslucent = UINavigationBar.appearance().isTranslucent
-        navigationBar.shadowImage = UINavigationBar.appearance().shadowImage
-    }
-}

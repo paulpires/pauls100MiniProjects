@@ -10,6 +10,11 @@
 		4C5B96E4203CCF7900841872 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B96E2203CCF7900841872 /* ProjectCollectionViewCell.swift */; };
 		4C5B96E5203CCF7900841872 /* ProjectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5B96E3203CCF7900841872 /* ProjectCollectionViewCell.xib */; };
 		4C5B96E9203CD98C00841872 /* ProjectCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B96E8203CD98C00841872 /* ProjectCollectionViewDataSource.swift */; };
+		4C7CAADA20A76180003A4359 /* AnimatedTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CAAD820A76180003A4359 /* AnimatedTabBarViewController.swift */; };
+		4C7CAADE20A764B5003A4359 /* BlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CAADC20A764B5003A4359 /* BlankViewController.swift */; };
+		4C7CAADF20A764B5003A4359 /* BlankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C7CAADD20A764B5003A4359 /* BlankViewController.xib */; };
+		4C7CAAE220A76A93003A4359 /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CAAE120A76A93003A4359 /* UIColor+Utility.swift */; };
+		4C7CAAE420A76AC3003A4359 /* UINavigationController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CAAE320A76AC3003A4359 /* UINavigationController+Utility.swift */; };
 		4CA69125205F285500044A72 /* ProjectHeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA69123205F285500044A72 /* ProjectHeroCell.swift */; };
 		4CA69126205F285500044A72 /* ProjectHeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA69124205F285500044A72 /* ProjectHeroCell.xib */; };
 		4CA7265220643972007AB75E /* ProjectHeroCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7265120643972007AB75E /* ProjectHeroCellViewModel.swift */; };
@@ -51,6 +56,11 @@
 		4C5B96E2203CCF7900841872 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C5B96E3203CCF7900841872 /* ProjectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCollectionViewCell.xib; sourceTree = "<group>"; };
 		4C5B96E8203CD98C00841872 /* ProjectCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		4C7CAAD820A76180003A4359 /* AnimatedTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTabBarViewController.swift; sourceTree = "<group>"; };
+		4C7CAADC20A764B5003A4359 /* BlankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankViewController.swift; sourceTree = "<group>"; };
+		4C7CAADD20A764B5003A4359 /* BlankViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlankViewController.xib; sourceTree = "<group>"; };
+		4C7CAAE120A76A93003A4359 /* UIColor+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utility.swift"; sourceTree = "<group>"; };
+		4C7CAAE320A76AC3003A4359 /* UINavigationController+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Utility.swift"; sourceTree = "<group>"; };
 		4CA69123205F285500044A72 /* ProjectHeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeroCell.swift; sourceTree = "<group>"; };
 		4CA69124205F285500044A72 /* ProjectHeroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectHeroCell.xib; sourceTree = "<group>"; };
 		4CA7265120643972007AB75E /* ProjectHeroCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeroCellViewModel.swift; sourceTree = "<group>"; };
@@ -102,6 +112,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C7CAAD720A7613E003A4359 /* AnimatedTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				4C7CAAD820A76180003A4359 /* AnimatedTabBarViewController.swift */,
+				4C7CAADC20A764B5003A4359 /* BlankViewController.swift */,
+				4C7CAADD20A764B5003A4359 /* BlankViewController.xib */,
+			);
+			path = AnimatedTabBar;
+			sourceTree = "<group>";
+		};
+		4C7CAAE020A76A72003A4359 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4C7CAAE120A76A93003A4359 /* UIColor+Utility.swift */,
+				4C7CAAE320A76AC3003A4359 /* UINavigationController+Utility.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4CA7265520644BB1007AB75E /* HeroCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +186,7 @@
 				4CE3EE06203B5B070095DADD /* AppDelegate.swift */,
 				4CE3EE37203B5BAD0095DADD /* Navigation */,
 				4CE3EE3B203B5D720095DADD /* Protocols */,
+				4C7CAAE020A76A72003A4359 /* Extensions */,
 				4CE3EE3A203B5D660095DADD /* ViewControllers */,
 				4CE3EE41203B5E900095DADD /* Models */,
 				4CE3EE0A203B5B070095DADD /* Main.storyboard */,
@@ -197,6 +227,7 @@
 		4CE3EE3A203B5D660095DADD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4C7CAAD720A7613E003A4359 /* AnimatedTabBar */,
 				4CA7265820657F88007AB75E /* StretchyHeader */,
 				4CE3EE44203B66250095DADD /* ProjectList */,
 			);
@@ -339,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C5B96E5203CCF7900841872 /* ProjectCollectionViewCell.xib in Resources */,
+				4C7CAADF20A764B5003A4359 /* BlankViewController.xib in Resources */,
 				4CE3EE48203B69680095DADD /* ProjectListViewController.xib in Resources */,
 				4CE3EE14203B5B070095DADD /* LaunchScreen.storyboard in Resources */,
 				4CA7265C20657FAC007AB75E /* StretchyHeaderViewController.xib in Resources */,
@@ -369,15 +401,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7CAAE420A76AC3003A4359 /* UINavigationController+Utility.swift in Sources */,
 				4C5B96E4203CCF7900841872 /* ProjectCollectionViewCell.swift in Sources */,
 				4CE3EE39203B5BBA0095DADD /* Router.swift in Sources */,
 				4CE3EE43203B5E9C0095DADD /* Project.swift in Sources */,
+				4C7CAADE20A764B5003A4359 /* BlankViewController.swift in Sources */,
 				4CA7265B20657FAC007AB75E /* StretchyHeaderViewController.swift in Sources */,
 				4C5B96E9203CD98C00841872 /* ProjectCollectionViewDataSource.swift in Sources */,
 				4CE3EE46203B66360095DADD /* ProjectViewModel.swift in Sources */,
 				4CA69125205F285500044A72 /* ProjectHeroCell.swift in Sources */,
+				4C7CAADA20A76180003A4359 /* AnimatedTabBarViewController.swift in Sources */,
 				4CE3EE09203B5B070095DADD /* ProjectListViewController.swift in Sources */,
 				4CE3EE40203B5D930095DADD /* DataProvider.swift in Sources */,
+				4C7CAAE220A76A93003A4359 /* UIColor+Utility.swift in Sources */,
 				4CE3EE0F203B5B070095DADD /* pauls100MiniProjects.xcdatamodeld in Sources */,
 				4CA7265220643972007AB75E /* ProjectHeroCellViewModel.swift in Sources */,
 				4CE3EE07203B5B070095DADD /* AppDelegate.swift in Sources */,

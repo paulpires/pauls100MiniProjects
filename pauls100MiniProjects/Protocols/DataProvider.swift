@@ -14,6 +14,7 @@ class DataProvider {
 
         return [
             Project(name: "Stretchy Header", imageName: "stretchy_header", viewController: .stretchHeader),
+            Project(name: "Animated Tab Bar", imageName: "wip", viewController: .animatedTabBar),
             Project(name: "coming soon...", imageName: "wip", viewController: .wip)
         ].map {
             return ProjectViewModel(projectModel: $0)
