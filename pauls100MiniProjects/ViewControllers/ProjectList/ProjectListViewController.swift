@@ -79,9 +79,9 @@ extension ProjectListViewController: UICollectionViewDelegate {
             let view2 = BlankViewController(title: "Downloads")
             view2.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
             let view3 = BlankViewController(title: "Contacts")
-            view3.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
+            view3.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
             let view4 = BlankViewController(title: "More")
-            view4.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+            view4.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
             animatedTabBar.viewControllers = [view1, view2, view3, view4]
             navigationViewController?.pushViewController(animatedTabBar, animated: true)
         case .wip:
