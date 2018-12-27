@@ -8,21 +8,26 @@
 
 import UIKit
 
-class ProjectListViewController: UIViewController {
-
+class ProjectListViewController: UIViewController
+    , UICollectionViewDelegate
+    , UICollectionViewDelegateFlowLayout
+{
     @IBOutlet weak var collectionView: UICollectionView!
-    var navigationViewController: UINavigationController?
     var projectsViewModel = [ProjectViewModel]() {
         didSet {
             reloadCollectionView()
         }
     }
-    
+    /**
+     * The collectionViewDataSource property exists because the dataSource property in UICollectionView
+     * is `weak`.
+     */
     private var collectionViewDataSource: ProjectCollectionViewDataSource?
-    private let dataProvider: DataProvider
+    private var navigationViewController: UINavigationController?
+    
+    // MARK: - init
 
-    init(dataProvider: DataProvider) {
-        self.dataProvider = dataProvider
+    init() {
         super.init(nibName: nil, bundle: nil)
         navigationViewController = UINavigationController(rootViewController: self)
     }
@@ -30,17 +35,23 @@ class ProjectListViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCell()
-        projectsViewModel = dataProvider.projects()
+        registerCells()
+        projectsViewModel = DataProvider.projects()
         title = "Pauls Mini Projects"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    // MARK: - view lifecycle
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        self.collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
     private func reloadCollectionView() {
@@ -50,29 +61,32 @@ class ProjectListViewController: UIViewController {
         collectionView.reloadData()
     }
     
-    private func registerCell() {
+    private func registerCells() {
         let projectCell = UINib(nibName: "ProjectCollectionViewCell", bundle: nil)
         let projectHeroCell = UINib(nibName: "ProjectHeroCell", bundle: nil)
         collectionView.register(projectCell, forCellWithReuseIdentifier: "project_cell")
         collectionView.register(projectHeroCell, forCellWithReuseIdentifier: "project_hero_cell")
     }
-}
-
-extension ProjectListViewController: UICollectionViewDelegate {
+    
+    // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        // delegate this back to the router?
         
         let projectViewModel = projectsViewModel[indexPath.row]
         
         switch projectViewModel.viewController() {
-        
+            
         case .stretchHeader:
+            
             let stretchyHeader = StretchyHeaderViewController()
-            navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                               style: .plain,
+                                                               target: nil,
+                                                               action: nil)
             navigationViewController?.pushViewController(stretchyHeader, animated: true)
+            
         case .animatedTabBar:
+            
             let animatedTabBar = AnimatedTabBarViewController()
             let view1 = BlankViewController(title: "Bookmarks")
             view1.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
@@ -84,38 +98,40 @@ extension ProjectListViewController: UICollectionViewDelegate {
             view4.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
             animatedTabBar.viewControllers = [view1, view2, view3, view4]
             navigationViewController?.pushViewController(animatedTabBar, animated: true)
+            
         case .wip:
+            
             print("doing nothing for now...")
         }
     }
-}
-
-extension ProjectListViewController: UICollectionViewDelegateFlowLayout {
-
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         let horizontalTraitCompact = collectionView.traitCollection.horizontalSizeClass == .compact
         let verticalTraitCompact = collectionView.traitCollection.verticalSizeClass == .compact
         
         if indexPath.section == 0 {
-            let width = collectionView.frame.width
-            let height = (!horizontalTraitCompact && !verticalTraitCompact) ? CGFloat(400) : CGFloat(200)
-            return CGSize(width: width, height: height)
+            let heroWidth = collectionView.frame.width
+            let heroHeight = (!horizontalTraitCompact && !verticalTraitCompact) ? CGFloat(400) : CGFloat(200)
+            return CGSize(width: heroWidth, height: heroHeight)
         }
         
         let minCellWidth: CGFloat = 200.0
         let numberOfColumns = horizontalTraitCompact ? CGFloat(3.0) : CGFloat(5.0)
-        var width = collectionView.bounds.width / numberOfColumns
-        var height = width
-
-        let fitsFlushOnScreen = width.truncatingRemainder(dividingBy: 1) == 0
-        if !fitsFlushOnScreen {
-            width = collectionView.bounds.width / (numberOfColumns + 1)
-            if width < minCellWidth && horizontalTraitCompact {
-                width = collectionView.bounds.width / (numberOfColumns - 1)
+        var projectCellWidth = collectionView.bounds.width / numberOfColumns
+        var projectCellHeight = projectCellWidth
+        
+        // checking if `projectCellWidth` is a fractional number. If not, then the cells won't fit.
+        let isFractionalNumber = projectCellWidth.truncatingRemainder(dividingBy: 1) != 0
+        if isFractionalNumber {
+            projectCellWidth = collectionView.bounds.width / (numberOfColumns + 1)
+            if projectCellWidth < minCellWidth && horizontalTraitCompact {
+                projectCellWidth = collectionView.bounds.width / (numberOfColumns - 1)
             }
-            height = width
+            projectCellHeight = projectCellWidth
         }
-        return CGSize(width: width, height: height)
+        return CGSize(width: projectCellWidth, height: projectCellHeight)
     }
 }

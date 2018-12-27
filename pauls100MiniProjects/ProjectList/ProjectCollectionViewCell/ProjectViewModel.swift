@@ -8,6 +8,18 @@
 
 import UIKit
 
+enum ViewController {
+    case wip
+    case stretchHeader
+    case animatedTabBar
+}
+
+struct Project {
+    let name: String
+    let imageName: String
+    let viewController: ViewController
+}
+
 struct ProjectViewModel {
     
     private var projectModel: Project

@@ -10,8 +10,7 @@ import UIKit
 
 class DataProvider {
     
-    func projects() -> [ProjectViewModel] {
-
+    static func projects() -> [ProjectViewModel] {
         return [
             Project(name: "Stretchy Header", imageName: "stretchy_header", viewController: .stretchHeader),
             Project(name: "Animated Tab Bar", imageName: "wip", viewController: .animatedTabBar),

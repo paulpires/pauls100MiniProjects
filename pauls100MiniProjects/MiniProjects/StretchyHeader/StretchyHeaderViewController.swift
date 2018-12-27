@@ -25,14 +25,6 @@ class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITe
         textView.delegate = self
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
