@@ -31,8 +31,8 @@ class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITe
         
         textView.delegate = self
         textView.contentInsetAdjustmentBehavior = .never
-        textView.contentInset = UIEdgeInsetsMake(headerView.frame.maxY, 0, 0, 0)
-        textView.scrollIndicatorInsets = UIEdgeInsetsMake(headerView.frame.maxY, 0, 0, 0)
+        textView.contentInset = UIEdgeInsets(top: headerView.frame.maxY, left: 0, bottom: 0, right: 0)
+        textView.scrollIndicatorInsets = UIEdgeInsets(top: headerView.frame.maxY, left: 0, bottom: 0, right: 0)
         textView.isEditable = false
         textView.text = StretchyHeaderViewController.text + StretchyHeaderViewController.text
         textView.alwaysBounceVertical = true

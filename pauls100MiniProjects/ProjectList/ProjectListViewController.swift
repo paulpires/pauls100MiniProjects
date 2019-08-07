@@ -18,10 +18,6 @@ class ProjectListViewController: UIViewController
             reloadCollectionView()
         }
     }
-    /**
-     * The collectionViewDataSource property exists because the dataSource property in UICollectionView
-     * is `weak`.
-     */
     private var collectionViewDataSource: ProjectCollectionViewDataSource?
     private var navigationViewController: UINavigationController?
     
@@ -43,10 +39,6 @@ class ProjectListViewController: UIViewController
         title = "Pauls Mini Projects"
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     // MARK: - view lifecycle
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -64,8 +56,8 @@ class ProjectListViewController: UIViewController
     private func registerCells() {
         let projectCell = UINib(nibName: "ProjectCollectionViewCell", bundle: nil)
         let projectHeroCell = UINib(nibName: "ProjectHeroCell", bundle: nil)
-        collectionView.register(projectCell, forCellWithReuseIdentifier: "project_cell")
-        collectionView.register(projectHeroCell, forCellWithReuseIdentifier: "project_hero_cell")
+        collectionView.register(projectCell, forCellWithReuseIdentifier: "ProjectCollectionViewCell")
+        collectionView.register(projectHeroCell, forCellWithReuseIdentifier: "ProjectHeroCell")
     }
     
     // MARK: - UICollectionViewDelegate
@@ -74,7 +66,7 @@ class ProjectListViewController: UIViewController
         
         let projectViewModel = projectsViewModel[indexPath.row]
         
-        switch projectViewModel.viewController() {
+        switch projectViewModel.viewController {
             
         case .stretchHeader:
             

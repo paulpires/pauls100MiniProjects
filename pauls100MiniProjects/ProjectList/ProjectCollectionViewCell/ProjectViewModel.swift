@@ -28,7 +28,7 @@ struct ProjectViewModel {
         self.projectModel = projectModel
     }
     
-    func project() -> String {
+    var projectName: String {
         return projectModel.name
     }
     
@@ -36,7 +36,7 @@ struct ProjectViewModel {
         return UIImage(named: projectModel.imageName)
     }
     
-    func viewController() -> ViewController {
+    var viewController: ViewController {
         return projectModel.viewController
     }
 }

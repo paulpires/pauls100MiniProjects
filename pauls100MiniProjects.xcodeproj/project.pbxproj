@@ -22,7 +22,6 @@
 		4CA7265C20657FAC007AB75E /* StretchyHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA7265A20657FAC007AB75E /* StretchyHeaderViewController.xib */; };
 		4CE3EE07203B5B070095DADD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE06203B5B070095DADD /* AppDelegate.swift */; };
 		4CE3EE09203B5B070095DADD /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE08203B5B070095DADD /* ProjectListViewController.swift */; };
-		4CE3EE0C203B5B070095DADD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE3EE0A203B5B070095DADD /* Main.storyboard */; };
 		4CE3EE0F203B5B070095DADD /* pauls100MiniProjects.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3EE0D203B5B070095DADD /* pauls100MiniProjects.xcdatamodeld */; };
 		4CE3EE11203B5B070095DADD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE3EE10203B5B070095DADD /* Assets.xcassets */; };
 		4CE3EE14203B5B070095DADD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE3EE12203B5B070095DADD /* LaunchScreen.storyboard */; };
@@ -67,7 +66,6 @@
 		4CE3EE03203B5B070095DADD /* pauls100MiniProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pauls100MiniProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE3EE06203B5B070095DADD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CE3EE08203B5B070095DADD /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
-		4CE3EE0B203B5B070095DADD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CE3EE0E203B5B070095DADD /* pauls100MiniProjects.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pauls100MiniProjects.xcdatamodel; sourceTree = "<group>"; };
 		4CE3EE10203B5B070095DADD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CE3EE13203B5B070095DADD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				4CE3EE44203B66250095DADD /* ProjectList */,
 				4CE3EE3A203B5D660095DADD /* MiniProjects */,
 				4C7CAAE020A76A72003A4359 /* Extensions */,
-				4CE3EE0A203B5B070095DADD /* Main.storyboard */,
 				4CE3EE10203B5B070095DADD /* Assets.xcassets */,
 				4CE3EE12203B5B070095DADD /* LaunchScreen.storyboard */,
 				4CE3EE15203B5B070095DADD /* Info.plist */,
@@ -295,7 +292,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Paul Pires";
 				TargetAttributes = {
 					4CE3EE02203B5B070095DADD = {
@@ -304,11 +301,13 @@
 					};
 					4CE3EE19203B5B070095DADD = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4CE3EE02203B5B070095DADD;
 					};
 					4CE3EE24203B5B070095DADD = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4CE3EE02203B5B070095DADD;
 					};
@@ -346,7 +345,6 @@
 				4CA7265C20657FAC007AB75E /* StretchyHeaderViewController.xib in Resources */,
 				4CA69126205F285500044A72 /* ProjectHeroCell.xib in Resources */,
 				4CE3EE11203B5B070095DADD /* Assets.xcassets in Resources */,
-				4CE3EE0C203B5B070095DADD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,14 +418,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4CE3EE0A203B5B070095DADD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4CE3EE0B203B5B070095DADD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4CE3EE12203B5B070095DADD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -453,6 +443,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -460,6 +451,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -510,6 +502,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -517,6 +510,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -556,7 +550,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pires.pauls100MiniProjects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -571,7 +565,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pires.pauls100MiniProjects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -587,7 +581,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pires.pauls100MiniProjectsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pauls100MiniProjects.app/pauls100MiniProjects";
 			};
@@ -604,7 +598,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pires.pauls100MiniProjectsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pauls100MiniProjects.app/pauls100MiniProjects";
 			};
@@ -620,7 +614,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pires.pauls100MiniProjectsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = pauls100MiniProjects;
 			};
@@ -636,7 +630,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pires.pauls100MiniProjectsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = pauls100MiniProjects;
 			};

@@ -29,7 +29,7 @@ class ProjectCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.section == 0 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "project_hero_cell",
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProjectHeroCell",
                                                                 for: indexPath) as? ProjectHeroCell else {
                 fatalError("Couldn't dequeue ProjectHeroCell")
             }
@@ -37,7 +37,7 @@ class ProjectCollectionViewDataSource: NSObject, UICollectionViewDataSource {
             return cell
         }
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "project_cell",
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProjectCollectionViewCell",
                                                             for: indexPath) as? ProjectCollectionViewCell else {
             fatalError("Couldn't dequeue ProjectCollectionViewCell")
         }
