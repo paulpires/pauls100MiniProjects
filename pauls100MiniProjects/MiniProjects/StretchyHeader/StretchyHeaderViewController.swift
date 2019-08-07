@@ -12,47 +12,54 @@ class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITe
 
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var textView: UITextView!
-    let offset_HeaderStop: CGFloat = 40.0
+    @IBOutlet weak var imageView: UIImageView!
     
     init() {
         super.init(nibName: nil, bundle: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.makeTransparent()
-        textView.textContainerInset = UIEdgeInsetsMake(140, 0, 0, 0)
-        textView.delegate = self
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.makeTransparent()
+        headerView.clipsToBounds = false
+        headerView.isUserInteractionEnabled = false
+        imageView.isUserInteractionEnabled = false
         
-        let offset = scrollView.contentOffset.y
-        print(offset)
-//        var headerTransform = CATransform3DIdentity
-////        var tableViewTransform = CATransform3DIdentity
-//
-//        if offset < 0 {
-//            print(offset)
-//            let scaleFactor: CGFloat = abs(offset) / headerView.bounds.height
-//            let headerHeightIncrease = headerView.bounds.height * (1.0 + scaleFactor) - headerView.bounds.height
-//            let yVariation = headerHeightIncrease / 2
-//
-//            headerTransform = CATransform3DTranslate(headerTransform, 0, yVariation, 0)
-//            headerTransform = CATransform3DScale(headerTransform, 1.0 + scaleFactor, 1.0 + scaleFactor, 0)
-//            headerView.layer.transform = headerTransform
-//
-//////            tableViewTransform = CATransform3DTranslate(tableViewTransform, 0, abs(offset), 0)
-//////            textView.layer.transform = tableViewTransform
-//
-//        } else {
-//            print("positive")
-//            headerTransform = CATransform3DTranslate(headerTransform, 0, -offset, 0)
-//            headerView.layer.transform = headerTransform
-//        }
+        textView.delegate = self
+        textView.contentInsetAdjustmentBehavior = .never
+        textView.contentInset = UIEdgeInsetsMake(headerView.frame.maxY, 0, 0, 0)
+        textView.scrollIndicatorInsets = UIEdgeInsetsMake(headerView.frame.maxY, 0, 0, 0)
+        textView.isEditable = false
+        textView.text = StretchyHeaderViewController.text + StretchyHeaderViewController.text
+        textView.alwaysBounceVertical = true
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        textView.contentOffset = CGPoint(x: 0, y: -headerView.frame.maxY)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y * -1
+        let navigationBarHeight = (navigationController?.navigationBar.frame.height ?? 44) + UIApplication.shared.statusBarFrame.height
+        let height = min(max(y, navigationBarHeight), CGFloat.greatestFiniteMagnitude)
+        imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: height)
+    }
+    
+    static let text = """
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+
+    """
 }

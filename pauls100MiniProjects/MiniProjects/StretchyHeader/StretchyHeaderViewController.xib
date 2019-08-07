@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StretchyHeaderViewController" customModule="pauls100MiniProjects" customModuleProvider="target">
             <connections>
                 <outlet property="headerView" destination="L3b-OB-8V3" id="c2r-hv-SMp"/>
+                <outlet property="imageView" destination="EUT-v4-xBx" id="JG8-mN-6DR"/>
                 <outlet property="textView" destination="Bf3-jO-4lN" id="CQd-M5-zeW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bf3-jO-4lN">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentInsetAdjustmentBehavior="never" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bf3-jO-4lN">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <string key="text">BEGIN Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  END</string>
@@ -32,11 +33,11 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3b-OB-8V3" userLabel="HeaderView">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ocean" translatesAutoresizingMaskIntoConstraints="NO" id="EUT-v4-xBx">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ocean" translatesAutoresizingMaskIntoConstraints="NO" id="EUT-v4-xBx">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="BLf-dR-xfa"/>
                         <constraint firstItem="EUT-v4-xBx" firstAttribute="top" secondItem="L3b-OB-8V3" secondAttribute="top" id="CN5-wS-7i2"/>
@@ -50,17 +51,17 @@
             <constraints>
                 <constraint firstItem="Bf3-jO-4lN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3N7-0L-DEU"/>
                 <constraint firstItem="L3b-OB-8V3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="I1y-dd-wDs"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Bf3-jO-4lN" secondAttribute="bottom" id="Pfj-z0-rtt"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bf3-jO-4lN" secondAttribute="trailing" id="YDg-LS-taO"/>
+                <constraint firstAttribute="bottom" secondItem="Bf3-jO-4lN" secondAttribute="bottom" id="Pfj-z0-rtt"/>
+                <constraint firstAttribute="trailing" secondItem="Bf3-jO-4lN" secondAttribute="trailing" id="YDg-LS-taO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="L3b-OB-8V3" secondAttribute="trailing" id="fF1-KO-weC"/>
                 <constraint firstItem="L3b-OB-8V3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jwD-xP-whO"/>
-                <constraint firstItem="Bf3-jO-4lN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="w95-D0-Hzy"/>
+                <constraint firstItem="Bf3-jO-4lN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w95-D0-Hzy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="76.5" y="54.5"/>
         </view>
     </objects>
     <resources>
-        <image name="ocean" width="5640" height="3760"/>
+        <image name="ocean" width="1880" height="1253.3333740234375"/>
     </resources>
 </document>
