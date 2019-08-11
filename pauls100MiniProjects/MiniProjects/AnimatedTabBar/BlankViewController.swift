@@ -8,27 +8,28 @@
 
 import UIKit
 
-class BlankViewController: UIViewController {
-
+class BlankViewController: UIViewController
+{
     private let viewControllerTitle: String
-    @IBOutlet weak var titleLabel: UILabel! {
-        didSet {
+    @IBOutlet weak var titleLabel: UILabel!
+    {
+        didSet
+        {
             titleLabel.text = viewControllerTitle
         }
     }
-    
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
     }
-    
-    init(title: String, color: UIColor = UIColor.random) {
+    init(title: String, color: UIColor = UIColor.random)
+    {
         self.viewControllerTitle = title
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = color
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

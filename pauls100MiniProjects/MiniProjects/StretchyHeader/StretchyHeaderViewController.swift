@@ -8,26 +8,34 @@
 
 import UIKit
 
-class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate {
-
+class StretchyHeaderViewController
+    : UIViewController
+    , UIScrollViewDelegate
+    , UITextViewDelegate
+{
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
-    init() {
+    init()
+    {
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         navigationController?.makeTransparent()
+        
         headerView.clipsToBounds = false
         headerView.isUserInteractionEnabled = false
+        
         imageView.isUserInteractionEnabled = false
+        imageView.contentMode = .scaleAspectFill
         
         textView.delegate = self
         textView.contentInsetAdjustmentBehavior = .never
@@ -36,18 +44,17 @@ class StretchyHeaderViewController: UIViewController, UIScrollViewDelegate, UITe
         textView.isEditable = false
         textView.text = StretchyHeaderViewController.text + StretchyHeaderViewController.text
         textView.alwaysBounceVertical = true
-    }
-    
-    override func viewDidLayoutSubviews() {
+    }   
+    override func viewDidLayoutSubviews()
+    {
         super.viewDidLayoutSubviews()
         textView.contentOffset = CGPoint(x: 0, y: -headerView.frame.maxY)
     }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
         let y = scrollView.contentOffset.y * -1
         let navigationBarHeight = (navigationController?.navigationBar.frame.height ?? 44) + UIApplication.shared.statusBarFrame.height
-        let height = min(max(y, navigationBarHeight), CGFloat.greatestFiniteMagnitude)
-        imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: height)
+        imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: max(y, navigationBarHeight))
     }
     
     static let text = """

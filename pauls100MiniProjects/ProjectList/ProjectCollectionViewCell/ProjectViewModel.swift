@@ -8,35 +8,40 @@
 
 import UIKit
 
-enum ViewController {
+enum ViewController
+{
     case wip
     case stretchHeader
     case animatedTabBar
 }
 
-struct Project {
+struct Project
+{
     let name: String
     let imageName: String
     let viewController: ViewController
 }
 
-struct ProjectViewModel {
+struct ProjectViewModel
+{
     
     private var projectModel: Project
+    var projectName: String
+    {
+        return projectModel.name
+    }
+    var viewController: ViewController
+    {
+        return projectModel.viewController
+    }
     
-    init(projectModel: Project) {
+    init(projectModel: Project)
+    {
         self.projectModel = projectModel
     }
     
-    var projectName: String {
-        return projectModel.name
-    }
-    
-    func projectIcon() -> UIImage? {
+    func projectIcon() -> UIImage?
+    {
         return UIImage(named: projectModel.imageName)
-    }
-    
-    var viewController: ViewController {
-        return projectModel.viewController
     }
 }

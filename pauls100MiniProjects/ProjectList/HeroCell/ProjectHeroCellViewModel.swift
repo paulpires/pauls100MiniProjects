@@ -8,9 +8,10 @@
 
 import UIKit
 
-struct ProjectHeroCellViewModel {
-    
-    func heroImage() -> UIImage? {
+struct ProjectHeroCellViewModel
+{
+    func heroImage() -> UIImage?
+    {
         return UIImage(named: "mac_app_store")
     }
 }

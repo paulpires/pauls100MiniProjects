@@ -8,21 +8,24 @@
 
 import UIKit
 
-class ProjectHeroCell: UICollectionViewCell {
-
+class ProjectHeroCell: UICollectionViewCell
+{
     @IBOutlet weak var heroImage: UIImageView!
     
-    var viewModel: ProjectHeroCellViewModel? {
-        didSet {
+    var viewModel: ProjectHeroCellViewModel?
+    {
+        didSet
+        {
             updateCell()
         }
     }
-    
-    override func awakeFromNib() {
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
     }
     
-    private func updateCell() {
+    private func updateCell()
+    {
         heroImage.image = viewModel?.heroImage()
     }
 }

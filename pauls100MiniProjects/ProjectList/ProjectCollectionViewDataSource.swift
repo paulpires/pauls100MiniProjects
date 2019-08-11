@@ -8,29 +8,32 @@
 
 import UIKit
 
-class ProjectCollectionViewDataSource: NSObject, UICollectionViewDataSource {
-    
+class ProjectCollectionViewDataSource: NSObject, UICollectionViewDataSource
+{
     private let projectViewModels: [ProjectViewModel]
     
-    init(projectViewModels: [ProjectViewModel]) {
+    init(projectViewModels: [ProjectViewModel])
+    {
         self.projectViewModels = projectViewModels
     }
     
     // MARK - UICollectionViewDataSource
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int
+    {
         return 2
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
         return section == 0 ? 1 : projectViewModels.count
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
         
-        if indexPath.section == 0 {
+        if indexPath.section == 0
+        {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProjectHeroCell",
-                                                                for: indexPath) as? ProjectHeroCell else {
+                                                                for: indexPath) as? ProjectHeroCell else
+            {
                 fatalError("Couldn't dequeue ProjectHeroCell")
             }
             cell.viewModel = ProjectHeroCellViewModel()
@@ -38,11 +41,11 @@ class ProjectCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         }
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProjectCollectionViewCell",
-                                                            for: indexPath) as? ProjectCollectionViewCell else {
+                                                            for: indexPath) as? ProjectCollectionViewCell else
+        {
             fatalError("Couldn't dequeue ProjectCollectionViewCell")
         }
         cell.viewModel = projectViewModels[indexPath.row]
         return cell
     }
- 
 }

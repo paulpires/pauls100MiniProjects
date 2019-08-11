@@ -8,22 +8,27 @@
 
 import UIKit
 
-class ProjectCollectionViewCell: UICollectionViewCell {
+class ProjectCollectionViewCell: UICollectionViewCell
+{
 
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var projectName: UILabel!
     
-    var viewModel: ProjectViewModel? {
-        didSet {
+    var viewModel: ProjectViewModel?
+    {
+        didSet
+        {
             updateCell()
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         super.init(coder: aDecoder)
     }
     
-    private func updateCell() {
+    private func updateCell()
+    {
         icon.image = viewModel?.projectIcon()
         projectName.text = viewModel?.projectName
         layer.borderWidth = 0.5
