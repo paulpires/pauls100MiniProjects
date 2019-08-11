@@ -15,15 +15,15 @@ class AnimatedTabBarViewController: UITabBarController
     init()
     {
         super.init(nibName: nil, bundle: nil)
-        let view1 = BlankViewController(title: "Home", color: .white)
-        view1.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
-        let view2 = BlankViewController(title: "TV Guide", color: .white)
-        view2.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
-        let view3 = BlankViewController(title: "Browse", color: .white)
-        view3.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
-        let view4 = BlankViewController(title: "Downloads", color: .white)
+        let view1 = BlankViewController(title: "Featured", color: .white)
+        view1.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
+        let view2 = BlankViewController(title: "Bookmarks", color: .white)
+        view2.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        let view3 = BlankViewController(title: "History", color: .white)
+        view3.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
+        let view4 = BlankViewController(title: "Search", color: .white)
         view4.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 3)
-        let view5 = BlankViewController(title: "Recordings", color: .white)
+        let view5 = BlankViewController(title: "More", color: .white)
         view5.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 4)
         viewControllers = [view1, view2, view3, view4, view5]
     }
@@ -58,5 +58,7 @@ class AnimatedTabBarViewController: UITabBarController
             self?.indicator.center.x =  tabItemSize/2 + tabItemSize * CGFloat(tabIndex)
         }
     }
-        
+    
+    
 }
+
